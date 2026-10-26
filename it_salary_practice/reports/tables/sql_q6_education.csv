@@ -1,0 +1,9 @@
+ed_rank,ed_level,n,mean_work_exp,mean_usd
+0.0,Primary/elementary school,127,15.2,137028.0
+1.0,"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",1215,12.1,71214.0
+2.0,"Associate degree (A.A., A.S., etc.)",798,14.7,168992.0
+2.0,Some college/university study without earning a degree,2862,15.1,87695.0
+3.0,"Bachelor’s degree (B.A., B.S., B.Eng., etc.)",10425,12.6,98200.0
+4.0,"Master’s degree (M.A., M.S., M.Eng., MBA, etc.)",6918,14.3,105051.0
+5.0,"Professional degree (JD, MD, Ph.D, Ed.D, etc.)",1363,17.0,128160.0
+,Other (please specify):,222,14.1,89790.0
