@@ -1,0 +1,13 @@
+{
+ "n_complete": 14454,
+ "n_train": 11563,
+ "n_test": 2891,
+ "n_countries_dummies": 35,
+ "k_kaiser": 7,
+ "k80": 12,
+ "k_cv": 8,
+ "cum_ratio_kaiser": 0.5957954127890327,
+ "ols_r2_train": 0.6101698108347667,
+ "ols_f_pvalue": 0.0,
+ "pcr_name": "PCR, k = 8 + страна"
+}
