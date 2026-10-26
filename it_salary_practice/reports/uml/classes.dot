@@ -1,0 +1,71 @@
+// Диаграмма классов модуля models.py и связанных классов.
+// Сборка: dot -Tpng -Gdpi=200 reports/uml/classes.dot -o reports/figures/19_classes.png
+digraph classes {
+    graph [rankdir=BT, nodesep=0.5, ranksep=0.6, fontname="Helvetica"];
+    node  [shape=plain, fontname="Helvetica", fontsize=10];
+    edge  [fontname="Helvetica", fontsize=9, color="#52514e"];
+
+    SalaryModel [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4" bgcolor="#e8f0fb">
+        <tr><td><i>«abstract»</i><br/><b>SalaryModel</b></td></tr>
+        <tr><td align="left" sides="t" border="1">name: str<br align="left"/>builder: FeatureBuilder<br align="left"/>columns_: list<br align="left"/>result_: OLSResults<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1"><i>+ design(df, fit): DataFrame</i><br align="left"/>+ fit(df): SalaryModel<br align="left"/>+ predict(df): Series<br align="left"/>+ evaluate(df): Metrics<br align="left"/>+ coefficients(): DataFrame<br align="left"/></td></tr>
+      </table>>];
+
+    CountryModel [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>CountryModel</b></td></tr>
+        <tr><td align="left" sides="t" border="1">+ design(df, fit): DataFrame<br align="left"/></td></tr>
+      </table>>];
+
+    ProfileOLS [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>ProfileOLS</b></td></tr>
+        <tr><td align="left" sides="t" border="1">with_country: bool<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ design(df, fit): DataFrame<br align="left"/></td></tr>
+      </table>>];
+
+    PCRModel [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>PCRModel</b></td></tr>
+        <tr><td align="left" sides="t" border="1">k: int<br align="left"/>with_country: bool<br align="left"/>pca: PCAAnalyzer<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ design(df, fit): DataFrame<br align="left"/>+ feature_effects(): Series<br align="left"/></td></tr>
+      </table>>];
+
+    PCAAnalyzer [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>PCAAnalyzer</b></td></tr>
+        <tr><td align="left" sides="t" border="1">scaler: StandardScaler<br align="left"/>pca: PCA<br align="left"/>features_: list<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ fit(X): PCAAnalyzer<br align="left"/>+ n_kaiser(): int<br align="left"/>+ n_for_share(share): int<br align="left"/>+ loadings(k): DataFrame<br align="left"/>+ transform(X, k): DataFrame<br align="left"/></td></tr>
+      </table>>];
+
+    FeatureBuilder [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>FeatureBuilder</b></td></tr>
+        <tr><td align="left" sides="t" border="1">min_country: int<br align="left"/>base_country: str<br align="left"/>countries_: list<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ fit(df): FeatureBuilder<br align="left"/>+ profile(df): DataFrame<br align="left"/>+ countries(df): DataFrame<br align="left"/>+ target(df): Series<br align="left"/></td></tr>
+      </table>>];
+
+    Metrics [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><i>«dataclass»</i><br/><b>Metrics</b></td></tr>
+        <tr><td align="left" sides="t" border="1">r2, adj_r2: float<br align="left"/>mae, rmse, mae_usd: float<br align="left"/>n, p: int<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ compute(y, pred, p): Metrics<br align="left"/></td></tr>
+      </table>>];
+
+    Experiment [label=<
+      <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+        <tr><td><b>Experiment</b></td></tr>
+        <tr><td align="left" sides="t" border="1">train, test: DataFrame<br align="left"/>builder: FeatureBuilder<br align="left"/>models: list[SalaryModel]<br align="left"/></td></tr>
+        <tr><td align="left" sides="t" border="1">+ add(model): SalaryModel<br align="left"/>+ metrics_table(): DataFrame<br align="left"/>+ cv_rmse(max_k): DataFrame<br align="left"/></td></tr>
+      </table>>];
+
+    CountryModel -> SalaryModel [arrowhead=empty];
+    ProfileOLS   -> SalaryModel [arrowhead=empty];
+    PCRModel     -> SalaryModel [arrowhead=empty];
+    PCRModel     -> PCAAnalyzer [arrowhead=none, arrowtail=diamond, dir=back, label=" 1"];
+    SalaryModel  -> FeatureBuilder [arrowhead=vee, style=dashed, label=" использует"];
+    SalaryModel  -> Metrics [arrowhead=vee, style=dashed, label=" создаёт"];
+    Experiment   -> SalaryModel [arrowhead=none, arrowtail=odiamond, dir=back, label=" 0..*"];
+    Experiment   -> FeatureBuilder [arrowhead=vee, label=" 1"];
+}
