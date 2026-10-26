@@ -1,0 +1,12 @@
+column,all_pct,sample_pct
+age_group,0.0,0.0
+ed_level,2.1,0.1
+country,28.0,0.0
+dev_type,11.2,0.0
+org_size,30.5,0.1
+remote_work,31.3,0.5
+is_manager,32.4,1.5
+work_exp,12.8,0.9
+years_code,12.5,0.3
+comp_usd,51.3,0.0
+languages,35.6,6.5
