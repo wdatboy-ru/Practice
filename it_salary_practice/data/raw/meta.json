@@ -1,0 +1,21 @@
+{
+ "source": "https://github.com/StackExchange/Survey/raw/refs/heads/main/packages/archive/2025/",
+ "license": "ODbL 1.0",
+ "downloaded_at": "2026-10-26T01:06:07+00:00",
+ "files": {
+  "so_survey_2025.csv": {
+   "url": "https://github.com/StackExchange/Survey/raw/refs/heads/main/packages/archive/2025/results.csv",
+   "bytes": 140893245,
+   "md5": "7c8869f4cf7bb35135af0ab87d939e48",
+   "md5_matches_coursework": true,
+   "rows": 49191,
+   "columns": 172
+  },
+  "so_schema_2025.csv": {
+   "url": "https://github.com/StackExchange/Survey/raw/refs/heads/main/packages/archive/2025/schema.csv",
+   "bytes": 30403,
+   "md5": "b4bb047aeb003fbe951c0f9889711fae",
+   "questions": 94
+  }
+ }
+}
