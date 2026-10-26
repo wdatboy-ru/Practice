@@ -1,0 +1,19 @@
+dev_type,n,median,dev_ru
+Academic researcher,116,59414.0,Научный сотрудник
+"Developer, front-end",847,65663.0,Front-end разработчик
+"Developer, QA or test",104,69520.5,Тестировщик (QA)
+"Developer, mobile",574,71661.0,Мобильный разработчик
+"Developer, full-stack",5779,75410.0,Full-stack разработчик
+"Developer, desktop or enterprise applications",900,76588.0,Разработчик desktop/корп. ПО
+"Developer, back-end",3183,81210.0,Back-end разработчик
+"Developer, game or graphics",127,81210.0,Разработчик игр и графики
+Data engineer,362,81210.0,Инженер данных
+"Developer, embedded applications or devices",630,81264.0,Разработчик встраиваемых систем
+Data scientist,195,89868.0,Data scientist
+AI/ML engineer,263,92812.0,ML-инженер
+DevOps engineer or professional,432,92812.0,DevOps-инженер
+Other (please specify):,253,95299.0,Другое
+"Architect, software or solutions",1100,102124.0,Архитектор ПО
+Cloud infrastructure engineer,168,109933.0,Инженер облачной инфраструктуры
+Engineering manager,447,136141.0,Руководитель разработки
+"Senior executive (C-suite, VP, etc.)",150,139218.0,"Топ-менеджер (C-level, VP)"
